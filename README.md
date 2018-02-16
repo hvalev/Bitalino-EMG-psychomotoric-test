@@ -54,5 +54,5 @@ num_buzz_trig = 20
 ![File missing](plots/plot1_1.png)
 * A plot is created with the maximum and minimum values, standard deviation and mean, such as those:<br/>
 ![File missing](plots/plot2.png)<br/>
-![File missing](plots/plot2_2.png)
+![File missing](plots/plot2_2.png)<br/>
 The blue line depicts the distribution, with it's extremes on the y-axis denoting the maximum and minimum, while the red line denotes the standard deviation. The black dot is the mean of the obtained values.
