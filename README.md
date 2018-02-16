@@ -10,8 +10,7 @@ pip install peakutils
 bitalino python api from [here](https://github.com/BITalinoWorld/revolution-python-api).
 
 ## Disclaimer
-The code has only been tested for the forearm flexor carpi radialis muscle. Theoretically it should be able to work for any muscle.
-* Sample positioning of the electrodes, where the one on the elbow is the reference electrode. <br/>
+The code has only been tested for the forearm flexor carpi radialis muscle. Theoretically it should be able to work for any muscle. Sample positioning of the electrodes, where the one on the elbow is the reference electrode: <br/>
 ![File missing](imgs/Electrode_placement.jpg)
 
 ## Trial
@@ -49,6 +48,7 @@ num_buzz_trig = 20
 ```
 * Buzzer will ring for 0.2 milliseconds to provide the stimulus to prompt the muscle to be actuated
 * Peaks are detected in real-time within an envelope frame, by comparing the averaged value to the previously acquired threshold.
+* Two threads are used to simulate the experiment, one for data acquisition and one to control the buzzer. This is due to the buzzer only being toggle-able. To allow for the buzzer to ring for 0.2 seconds and also introduce pauses between the separate stimuli time.sleep() is used, so a separate thread is required in order to avoid blocking the data acquisition thread. When the experiment is done on the buzzer thread, a global flag is set to false, prompting the data acquisition thread to finish as well.
 * A plot is created for the time difference between the stimulus and the response, such as those:<br/>
 ![File missing](plots/plot1.png)<br/>
 ![File missing](plots/plot1_1.png)
