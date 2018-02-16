@@ -22,7 +22,7 @@ Consist of two phases, calibration and trial, while instructions are given throu
 
 ### Calibration
 During the calibration phase a 10 seconds fragment of the signal is acquired to estimate, whether there is a significant noise in the signal. For example poorly placed arm will generate slight involuntary movements, which will introduce noise to the signal. Movements of the neighboring muscles or muscle groups will introduce significant noise.
-Ideally, in this phase there will be three distinguishable peaks in the signal, such as this:
+Ideally, in this phase there will be three distinguishable peaks in the signal, such as this:<br/>
 ![File missing](plots/calibration.png)
 * The absolute values of the signal is taken as explained [here](https://en.wikipedia.org/wiki/Electromyography#EMG_signal_processing)
 * A smoothing ['lowess' local regression filter](https://en.wikipedia.org/wiki/Local_regression) is applied to smoothen the signal
@@ -35,7 +35,13 @@ threshold = (baseline+max_val)/2
 * Plot is generated of the signal such as this: <br/>
 ![File missing](plots/calibration.png)
 * Peak indexes, peak values, averaged signal baseline and derived threshold are displayed in the console output.
-
+```
+Peaks are: [199 474 787]
+Peak values are: [0.21902599590374444, 0.27265646132691207, 0.2066513283885936]
+Baseline is : 0.052243185529934275
+Treshold is : 0.16244982342842318
+Calibration successful
+```
 ### Trial
 The following variable can be modified to generate shorter or longer trials. In my experience more than 20 instances already introduces fatigue.
 ```
