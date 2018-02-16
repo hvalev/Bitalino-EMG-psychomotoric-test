@@ -50,9 +50,9 @@ num_buzz_trig = 20
 * Buzzer will ring for 0.2 milliseconds to provide the stimulus to prompt the muscle to be actuated
 * Peaks are detected in real-time within an envelope frame, by comparing the averaged value to the previously acquired threshold.
 * A plot is created for the time difference between the stimulus and the response, such as those:<br/>
-![File missing](plots/plot1)<br/>
-![File missing](plots/plot1_1)
+![File missing](plots/plot1.png)<br/>
+![File missing](plots/plot1_1.png)
 * A plot is created with the maximum and minimum values, standard deviation and mean, such as those:<br/>
-![File missing](plots/plot2)<br/>
-![File missing](plots/plot2_2)
+![File missing](plots/plot2.png)<br/>
+![File missing](plots/plot2_2.png)
 The blue line depicts the distribution, with it's extremes on the y-axis denoting the maximum and minimum, while the red line denotes the standard deviation. The black dot is the mean of the obtained values.
