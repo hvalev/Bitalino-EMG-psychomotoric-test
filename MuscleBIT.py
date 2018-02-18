@@ -9,7 +9,7 @@ import peakutils.peak
 import math
 
 num_buzz_trig = 20
-treshold = 0
+threshold = 0
 trialData = []
 trial = True
 
@@ -32,7 +32,7 @@ def generatePauses(number):
 def dataAcquisition():
     global trial 
     global trialData
-    global treshold
+    global threshold
     time.sleep(1)
     
     srate = 1000
@@ -49,7 +49,7 @@ def dataAcquisition():
             if(len(trialData) > 0):
                 idx = len(trialData) - 1
                 #check if timestamp has been written -> disallow two peaks within the same trial frame
-                if(trialData[idx][1] == 0 and treshold < envelope):
+                if(trialData[idx][1] == 0 and threshold < envelope):
                     trialData[idx][1] = time.time()
     finally:
         print("STOP")
@@ -88,7 +88,7 @@ def triggerBuzzer():
     pass
 
 def calibrateSensor():
-    global treshold
+    global threshold
     print("In order to calibrate the sensor to the muscle you will be using we require you")
     print("to activate that muscle three times during an interval of 10 seconds")
     time.sleep(10)
@@ -131,7 +131,7 @@ def calibrateSensor():
         print('Peaks are: %s' % (indexes))
         print('Peak values are: %s' % (peaks))
         print('Baseline is : %s' % (baseline))
-        print('Treshold is : %s' % (threshold))
+        print('Threshold is : %s' % (threshold))
         
         #we have exactly 3 peaks -> good & don't close socket
         if(len(peaks) == 3):
